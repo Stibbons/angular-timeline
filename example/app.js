@@ -1,14 +1,14 @@
 'use strict';
 
 var app = angular.module('example', [
-  'ui.router',
-  'angular-timeline'
+  'angular-timeline',
+  'ngRoute'
 ]);
 
-app.config(function($stateProvider) {
-  $stateProvider.state('user', {
-    url:         '',
-    controller: 'ExampleCtrl',
-    templateUrl: 'example.html'
-  });
+app.config(function($routeProvider) {
+    $routeProvider
+        .when("/example", {
+            templateUrl: "example.html",
+            controller: "ExampleCtrl",
+        });
 });
